@@ -5,7 +5,9 @@ import socket, select, string, sys
 
 
 def prompt():
-    sys.stdout.write('<You> ')
+    myname = socket.getfqdn(socket.gethostname())
+    myaddr = socket.gethostbyname(myname)
+    sys.stdout.write(myaddr + ':')
     sys.stdout.flush()
 
 
