@@ -5,9 +5,8 @@ import socket, select, string, sys
 
 
 def prompt():
-    myname = socket.getfqdn(socket.gethostname())
-    myaddr = socket.gethostbyname(myname)
-    sys.stdout.write(myaddr + ':')
+
+    sys.stdout.write('<You>:')
     sys.stdout.flush()
 
 
@@ -50,7 +49,6 @@ if __name__ == "__main__":
                 else:
                     # print data
                     sys.stdout.write(data)
-                    prompt()
 
             # user entered a message
             else:
